@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# proxy related
+sneaky-proxy() {
+        if [[ $# -eq 0 ]] ; then
+                echo 'enable or disable?'
+        fi
+
+        case "$1" in
+                enable)
+                        export http_proxy=http://x.x.x.x:8080
+                        sleep 1
+                        ;;
+
+                disable)
+                        unset http_proxy
+                        sleep 1
+                        ;;
+
+        esac
+}
